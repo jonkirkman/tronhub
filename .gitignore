@@ -1,5 +1,19 @@
-.DS_Store
+# Don’t commit the following directories created by pub.
 build/
-packages
+packages/
+.buildlog
+
+# Or the files created by dart2js.
+*.dart.js
+*.dart.precompiled.js
+*.js_
+*.js.deps
+*.js.map
+
+# Include when developing application packages.
 pubspec.lock
+
+# Don't commit IDE or OS litter
+.DS_Store
 .idea
+.sublime-project
