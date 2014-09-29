@@ -5,5 +5,9 @@ class Game {
   Arena arena;
   List<Player> players;
 
-  Game();
+  Game(this.arena, this.players);
+
+  void gameLoop() {
+
+  }
 }
