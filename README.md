@@ -22,7 +22,6 @@ Here's the basic idea:
 - Players must attempt to travel with each turn
 - Travel is limited to cardinal directions (no diagonal travel)
 - Travel velocity is always 1 cell (primary distance unit) per turn
-  - Could your light stream be turned off to provide a 1 cell boost to your speed?
 - Intent to travel is expressed in egocentric terms (left, forward, right)
 - A player attempting invalid travel is immediately terminated
 - An attempt to travel to a location beyond the arena bounds is invalid
