@@ -11,13 +11,8 @@ class Arena {
   int width, height;
   Map<String, bool> cells;
 
-  Arena();
+  Arena(this.width, this.height);
 
-  bool containsCoordinate(Coordinate coord) {
-    // x is gte 0 and lte width
-    // y is gte 0 and lte hight
-    return false;
-  }
-
+  bool containsCoordinate(Coordinate c) => c.x >= 0 && c.x < width && c.y >= 0 && c.y < height;
 
 }
