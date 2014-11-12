@@ -4,9 +4,10 @@ part of tron_hub;
 class Player {
   String name, _initialBearing;
   bool active;
+  Stream connection;
   Queue<Coordinate> positions;
 
-  Player(this.name);
+  Player(this.name, this.connection);
 
   Coordinate get currentPosition => positions.first;
              set currentPosition(Coordinate pos) => positions.addFirst(pos);

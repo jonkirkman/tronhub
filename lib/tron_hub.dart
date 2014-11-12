@@ -1,6 +1,7 @@
 library tron_hub;
 
 import 'dart:collection';
+import 'dart:async';
 
 part 'src/game.dart';
 part 'src/player.dart';
