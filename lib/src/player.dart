@@ -14,6 +14,8 @@ class Player {
 
   Coordinate get previousPosition => positions.elementAt(1);
 
+  Coordinate get projectedPosition => currentPosition.next(bearing);
+
   Direction get bearing {
     if (currentPosition.x == previousPosition.x) {
       return (currentPosition.y > previousPosition.y)? Direction.NORTH : Direction.SOUTH;
