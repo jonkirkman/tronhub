@@ -14,12 +14,12 @@ class Player {
 
   Coordinate get previousPosition => positions.elementAt(1);
 
-  String get bearing {
+  Direction get bearing {
     if (currentPosition.x == previousPosition.x) {
-      return (currentPosition.y > previousPosition.y)? "NORTH" : "SOUTH";
+      return (currentPosition.y > previousPosition.y)? Direction.NORTH : Direction.SOUTH;
     }
     else if (currentPosition.y == previousPosition.y) {
-      return (currentPosition.x > previousPosition.x)? "EAST" : "WEST";
+      return (currentPosition.x > previousPosition.x)? Direction.EAST : Direction.WEST;
     }
     return _initialBearing;
   }

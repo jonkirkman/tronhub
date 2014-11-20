@@ -21,6 +21,21 @@ class Coordinate {
     y = int.parse(parts[1]);
   }
 
+  /// Using Direction enum simplifies retrieving the next projected coordinate
+  Coordinate next(Direction direction) {
+    switch (direction) {
+      case Direction.NORTH:
+        return north;
+      case Direction.SOUTH:
+        return south;
+      case Direction.EAST:
+        return east;
+      case Direction.WEST:
+        return west;
+    }
+    return this;
+  }
+
   Coordinate get north => new Coordinate(x, y--);
 
   Coordinate get south => new Coordinate(x, y++);
