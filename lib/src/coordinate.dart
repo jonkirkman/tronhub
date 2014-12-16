@@ -24,13 +24,13 @@ class Coordinate {
   /// Using Direction enum simplifies retrieving the next projected coordinate
   Coordinate next(Direction direction) {
     switch (direction) {
-      case Direction.NORTH:
+      case Direction.north:
         return north;
-      case Direction.SOUTH:
+      case Direction.south:
         return south;
-      case Direction.EAST:
+      case Direction.east:
         return east;
-      case Direction.WEST:
+      case Direction.west:
         return west;
     }
     return this;
