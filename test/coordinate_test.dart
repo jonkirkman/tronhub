@@ -25,10 +25,10 @@ main() {
        * So, c = 1,0 and north = 1,1
        * This deviates from most languages I know. - Nick Nov 24, 2014
       */
-      var north = c.next(Direction.NORTH);
-      var south = c.next(Direction.SOUTH);
-      var east = c.next(Direction.EAST);
-      var west = c.next(Direction.WEST);
+      var north = c.next(Direction.north);
+      var south = c.next(Direction.south);
+      var east = c.next(Direction.east);
+      var west = c.next(Direction.west);
 
       expect(north.toString(), '1,0');
       expect(south.toString(), '1,2');
