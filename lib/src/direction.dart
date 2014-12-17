@@ -1,4 +1,4 @@
-part of tronhub;
+part of tron_hub;
 
 enum Direction {
   north,
