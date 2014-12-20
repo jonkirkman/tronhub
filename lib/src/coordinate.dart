@@ -21,13 +21,28 @@ class Coordinate {
     y = int.parse(parts[1]);
   }
 
-  Coordinate get north => new Coordinate(x, y--);
+  /// Using Direction enum simplifies retrieving the next projected coordinate
+  Coordinate next(Direction direction) {
+    switch (direction) {
+      case Direction.north:
+        return north;
+      case Direction.south:
+        return south;
+      case Direction.east:
+        return east;
+      case Direction.west:
+        return west;
+    }
+    return this;
+  }
 
-  Coordinate get south => new Coordinate(x, y++);
+  Coordinate get north => new Coordinate(x, y-1);
 
-  Coordinate get west => new Coordinate(x--, y);
+  Coordinate get south => new Coordinate(x, y+1);
 
-  Coordinate get east => new Coordinate(x++, y);
+  Coordinate get west => new Coordinate(x-1, y);
+
+  Coordinate get east => new Coordinate(x+1, y);
 
   bool operator ==(other) => x == other.x && y == other.y;
 

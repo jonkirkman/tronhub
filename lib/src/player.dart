@@ -2,10 +2,11 @@ part of tron_hub;
 
 // Who will battle?
 class Player {
-  String name, _initialBearing;
+  String name;
+  Direction _initialBearing;
   bool active;
   Stream connection;
-  Queue<Coordinate> positions;
+  Queue<Coordinate> positions = new Queue();
 
   Player(this.name, this.connection);
 
@@ -14,12 +15,14 @@ class Player {
 
   Coordinate get previousPosition => positions.elementAt(1);
 
-  String get bearing {
+  Coordinate get projectedPosition => currentPosition.next(bearing);
+
+  Direction get bearing {
     if (currentPosition.x == previousPosition.x) {
-      return (currentPosition.y > previousPosition.y)? "NORTH" : "SOUTH";
+      return (currentPosition.y > previousPosition.y)? Direction.north : Direction.south;
     }
     else if (currentPosition.y == previousPosition.y) {
-      return (currentPosition.x > previousPosition.x)? "EAST" : "WEST";
+      return (currentPosition.x > previousPosition.x)? Direction.east : Direction.west;
     }
     return _initialBearing;
   }
