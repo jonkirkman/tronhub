@@ -6,5 +6,6 @@ import 'dart:async';
 part 'src/direction.dart';
 part 'src/game.dart';
 part 'src/player.dart';
+part 'src/player_state.dart';
 part 'src/arena.dart';
 part 'src/coordinate.dart';

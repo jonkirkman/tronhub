@@ -2,18 +2,31 @@ part of tron_hub;
 
 // Basic start-up and turn taking
 class Game {
+  String name;
   Arena arena;
-  List<Player> players;
+  Set<Player> players;
 
-  Game(Arena arena, List<Player> players) {
-    this.arena = arena;
+
+  Game(String name, Set<Player> players) {
+    this.name = name;
     this.players = players;
+  }
+  
+  Set<Player> get activePlayers {
+    return players.where( (p) => p.active );
+  }
 
+  /// Begin the game
+  void start() {
+    players.forEach( (p) {
+      p.state = PlayerState.active;
+    } );
     gameLoop();
   }
 
-  List<Player> get activePlayers {
-    return players.where( (p) => p.active );
+  /// Starts the game when all joined players are ready?
+  void startWhenReady() {
+
   }
 
   void gameLoop() {

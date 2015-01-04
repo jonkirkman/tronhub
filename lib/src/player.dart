@@ -3,9 +3,9 @@ part of tron_hub;
 // Who will battle?
 class Player {
   String name;
-  Direction _initialBearing;
-  bool active;
   Stream connection;
+  Direction _initialBearing;
+  PlayerState state = PlayerState.present;
   Queue<Coordinate> positions = new Queue();
 
   Player(this.name, this.connection);
@@ -25,5 +25,10 @@ class Player {
       return (currentPosition.x > previousPosition.x)? Direction.east : Direction.west;
     }
     return _initialBearing;
+  }
+
+  PlayerState ready() {
+    state = PlayerState.ready;
+    return state;
   }
 }
