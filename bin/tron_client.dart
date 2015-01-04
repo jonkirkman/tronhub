@@ -7,7 +7,7 @@ main() {
 
 void setupEvents(WebSocket ws) {
 
-  ws.add('Hello, World!');
+  ws.add('info');
   ws.listen((msg){ print(msg); });
 
   stdin.lineMode = true;
